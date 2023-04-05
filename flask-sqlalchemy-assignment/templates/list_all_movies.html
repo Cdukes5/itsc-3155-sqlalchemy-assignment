@@ -1,0 +1,29 @@
+{% extends '_layout.html' %}
+
+{% block title %}Movie Rating App | All Movies{% endblock %}
+
+{% block body %}
+<h1 class="mb-5">All Movies</h1>
+<p class="mb-3">See our list of movie ratings below</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Director</th>
+      <th>Rating</th>
+      <th>ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- TODO - Render movies in a table with a link on the title to the individual movie page -->
+      {% for item in movies %}
+      <tr>
+          <td><a href="/movies/{{item.movie_id}}">{{ item.title }}</a></td>
+          <td>{{ item.director }}</td>
+          <td>{{ item.rating }}</td>
+          <td>{{ item.movie_id }}</td>
+      </tr>
+      {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
